@@ -1,13 +1,4 @@
-"""Problem: Reverse a singly linked list both recursively and iteratively"""
-class Node():
-    """Building blocks of a linked list"""
-
-    def __init__(self, e):
-        """creates a new node with element e as the value"""
-        self.val = e
-        self.next = None
-
-class Solution():
+class Solution:
     
     def iter_reverse(self, head: ListNode) -> ListNode:
         """Returns a linked list reversed"""
