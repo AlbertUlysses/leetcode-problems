@@ -1,21 +1,10 @@
-class RecentCounter:
+class RecentCounter(object):
 
     def __init__(self):
-        self._head = None
-        self._size = 0
+        self.counter = []
 
-    def ping(self, t: int) -> int:
-        if self._head == None:
-            self._head = t
-            self._size += 1
-            return self._size
-        elif self._head < t:
-            self._head = t
-            self._size += 1
-            return self._size
-        else:
-            raise Error('t must be increasing')
-
-# Your RecentCounter object will be instantiated and called as such:
-# obj = RecentCounter()
-# param_1 = obj.ping(t)
+    def ping(self, t):
+        self.counter.insert(0,t)
+        while t-3000>self.counter[len(self.counter)-1]:
+            self.counter.pop()
+        return len(self.counterlass RecentCounter:
