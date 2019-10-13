@@ -15,3 +15,12 @@ class Solution:
             return ans
 """Runtime: 48 ms, faster than 30.43% of Python3 online submissions for Fibonacci Number.
 Memory Usage: 13.9 MB, less than 5.80% of Python3 online submissions for Fibonacci Number."""
+"""solution with recursion"""
+class Solution:
+    def fib(self, N: int) -> int:
+        if N<=1:
+            return N
+        else:
+            return(self.fib(N - 1) + self.fib(N - 2))
+"""Runtime: 1080 ms, faster than 19.93% of Python3 online submissions for Fibonacci Number.
+Memory Usage: 13.9 MB, less than 5.80% of Python3 online submissions for Fibonacci Number."""
