@@ -12,8 +12,10 @@ class Solution(object):
         return count
 """
 Runtime: 20 ms, faster than 50.95% of Python online submissions for Number of 1 Bits.
-Memory Usage: 11.8 MB, less than 45.00% of Python online submissions for Number of 1 Bits."""
-"""Alternatively we can use some more of the built in functions that is slightly faster."""
+Memory Usage: 11.8 MB, less than 45.00% of Python online submissions for Number of 1 Bits.
+"""
+"""Alternatively we can use some more of the built in functions that is slightly faster.
+"""
 
 class Solution(object):
     def hammingWeight(self, n):
@@ -24,4 +26,21 @@ class Solution(object):
         return bin(n).count('1')
 """
 Runtime: 16 ms, faster than 77.94% of Python online submissions for Number of 1 Bits.
-Memory Usage: 11.9 MB, less than 7.50% of Python online submissions for Number of 1 Bits."""
+Memory Usage: 11.9 MB, less than 7.50% of Python online submissions for Number of 1 Bits.
+"""
+"""Perhaps the best option for interviewing."""
+class Solution(object):
+    def hammingWeight(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        res = 0
+        while n:
+            res += n % 2
+            n /= 2
+        return res
+"""
+Runtime: 16 ms, faster than 77.94% of Python online submissions for Number of 1 Bits.
+Memory Usage: 11.8 MB, less than 27.50% of Python online submissions for Number of 1 Bits.
+"""
