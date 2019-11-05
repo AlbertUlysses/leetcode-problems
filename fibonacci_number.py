@@ -24,3 +24,16 @@ class Solution:
             return(self.fib(N - 1) + self.fib(N - 2))
 """Runtime: 1080 ms, faster than 19.93% of Python3 online submissions for Fibonacci Number.
 Memory Usage: 13.9 MB, less than 5.80% of Python3 online submissions for Fibonacci Number."""
+class Solution:
+    def fib(self, N: int) -> int:
+        if N == 0:
+            return N
+        last: int = 0
+        next: int = 1
+        for _ in range(1, N):
+            last, next = next, last + next
+        return next
+"""
+Runtime: 36 ms, faster than 74.78% of Python3 online submissions for Fibonacci Number.
+Memory Usage: 13.8 MB, less than 5.80% of Python3 online submissions for Fibonacci Number.
+"""
