@@ -1,2 +1,5 @@
-# leetcode
-Solving problems from Leetcode
+##leetcode
+Solving algorithm problems from Leetcode.
+
+### Intro:
+
