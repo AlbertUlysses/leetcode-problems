@@ -1,30 +1,32 @@
-"""
 class Solution:
-    def countNegatives(self, grid: List[List[int]]) -> int:
-"""
-        # TODO: write for-loop for each row in matrix
-        # TODO: implement binary search on each list that finds the point where it is greater than 0
-        # target here is always 0, as oppossed to normal binary search
-        # return the remainder leng
-class Solution:
-    def count_neg(self, list_: list) -> int:
-        low = 0
-        high = len(list_) - 1
-        while low < high:
-            mid = (low + high) // 2
-            if list_[mid + 1] < 0 and list_[mid] >= 0:
-                return len(list_[mid+1:])
-            elif list_[mid] >= 0:
-                low = mid + 1
-            else:
-                high =  mid - 1
-        return 0
+    def countNegatives(self, grid) -> int:
+        neg_count = 0
+        for row in range(len(grid)):
+            list_ = grid[row]
+            count = 0
+            if list_[0] < 0:
+                neg_count += len(list_)
+                count += 1
+            low = 0
+            high = len(list_) - 1
+            while low <= high and count == 0:
+                mid = (low + high) // 2
+                if list_[mid + 1] < 0 and list_[mid] >= 0:
+                    neg_count +=  len(list_[mid+1:])
+                    count += 1
+                elif list_[mid] >= 0:
+                    low = mid + 1
+                else:
+                    high =  mid - 1
+        return count 
 
-list_ = [5, 4, 0, -1, -1, -2]
+
+list_ = [[8,-2,-2,-2,-4,-5,-5],[-2,-3,-3,-4,-4,-5,-5],[-2,-5,-5,-5,-5,-5,-5],[-3,-5,-5,-5,-5,-5,-5],[-5,-5,-5,-5,-5,-5,-5],[-5,-5,-5,-5,-5,-5,-5],[-5,-5,-5,-5,-5,-5,-5],[-5,-5,-5,-5,-5,-5,-5],[-5,-5,-5,-5,-5,-5,-5]]
+
 list_2 = [5, 4, 3]
 
 test = Solution()
 test2 = Solution()
 
-print(test.count_neg(list_))
-print(test.count_neg(list_2))
+print(test.countNegatives(list_))
+#print(test.count_neg(list_2))
